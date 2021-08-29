@@ -1,0 +1,16 @@
+.card{
+    display: flex;
+    flex-direction: row;
+
+    border-bottom: 2px gray solid;
+}
+.card .student-image{
+
+    display: flex;
+    height: 120px;
+    width: 120px;
+}
+.card .content .card-text{
+    padding-left: 10px;
+    line-height: 1px;
+}

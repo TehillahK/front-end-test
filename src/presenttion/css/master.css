@@ -1,0 +1,31 @@
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    background-color: rgb(239,239,239);
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+.container{
+    display: grid;
+
+    justify-content: center;
+
+    align-items: center;
+    height: 100vh;
+
+}
+
+.box{
+    display: flex;
+    border-radius: 30px;
+    background-color: white;
+    height: 500px;
+    width: 700px;
+    overflow: auto;
+}
