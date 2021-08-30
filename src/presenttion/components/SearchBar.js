@@ -1,8 +1,16 @@
 import '../css/search.css'
-function SearchBar() {
+
+
+function SearchBar(props) {
+
+
     return(
 
-            <input id={"search-bar"} placeholder={"Search by name"} />
+            <input id={"search-bar"} placeholder={"Search by name"} onChange={
+
+                    event => props.update(event.target.value)
+
+            } />
 
     )
 }

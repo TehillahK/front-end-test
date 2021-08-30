@@ -8,7 +8,7 @@ import SearchBar from "./components/SearchBar";
 function App() {
  // let studentLists=getStudents();
   const [students, setStudents] = useState([]);
-
+  const [name,setName]=useState('')
 
     useEffect(() => {
        async function getStudents(){
@@ -33,13 +33,16 @@ function App() {
        getStudents().then(r => console.log("success"))
     }, []);
 
+  function updateQuery(query){
+      setName(query)
+  }
 
 
   return (
     <div className={"container"}>
         <div className={"box"}>
-            <SearchBar />
-            <StudentList list={students} />
+            <SearchBar update={updateQuery} />
+            <StudentList list={students} query={name} />
         </div>
     </div>
   );
