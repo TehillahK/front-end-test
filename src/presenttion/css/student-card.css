@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 180px auto;
     width: 100%;
-    border-bottom: thin gray solid;
+    border-bottom: thin lightgray solid;
 }
 .card .student-image{
     margin: auto;
@@ -13,18 +13,22 @@
     height: 105px;
 
 }
-.card .content{
-
+.card .content h1{
+    text-transform: uppercase;
+    font-weight:bolder;
+    line-height: 15px;
 }
+
 .card .content .card-text{
   padding-left: 15px;
-    padding-bottom: 5px;
+    padding-bottom: 2px;
     font-size: 15px;
     color: gray;
 
-    line-height: 2px;
+    line-height: 5px;
 }
 img{
     border: 2px solid gray;
     border-radius: 100%;
 }
+

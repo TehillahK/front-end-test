@@ -1,0 +1,11 @@
+#search-bar{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 15px;
+    padding-right: 5px;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    height: 45px;
+    font-size: 15px;
+}

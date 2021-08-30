@@ -4,6 +4,7 @@
 import {useEffect, useState} from "react";
 import StudentList from "./components/StudentList";
 import './css/master.css'
+import SearchBar from "./components/SearchBar";
 function App() {
  // let studentLists=getStudents();
   const [students, setStudents] = useState([]);
@@ -37,6 +38,7 @@ function App() {
   return (
     <div className={"container"}>
         <div className={"box"}>
+            <SearchBar />
             <StudentList list={students} />
         </div>
     </div>
