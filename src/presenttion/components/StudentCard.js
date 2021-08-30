@@ -3,7 +3,7 @@ const StudentCard = (props) => {
   return(
       <div className={"card"}>
           <img className={"student-image"} src={props.photoUrl}/>
-          <div className={"content"} >
+          <div className={"content"} alt={`Student image of ${props.name}`}>
               <h1>{props.name}</h1>
               <div className={"card-text"}>
                 <p>Email: {props.email}</p>
