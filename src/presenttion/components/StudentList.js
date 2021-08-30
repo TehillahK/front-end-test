@@ -34,8 +34,10 @@ const StudentList=(props)=>{
 }
 StudentList.prototype={
     list: PropTypes.array,
+    query: PropTypes.string,
 };
 StudentList.defaultProps={
     list:[],
+    query:"",
 }
 export default StudentList;
