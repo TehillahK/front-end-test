@@ -1,6 +1,7 @@
 .card{
     display: grid;
-    grid-template-columns: 180px auto;
+    grid-template-columns: 180px auto 50px;
+    grid-template-rows: auto auto ;
     width: 100%;
     border-bottom: thin lightgray solid;
     align-self: flex-start;
@@ -34,3 +35,6 @@ img{
     border-radius: 100%;
 }
 
+ol{
+    list-style: none;
+}

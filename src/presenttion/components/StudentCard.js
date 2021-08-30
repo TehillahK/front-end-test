@@ -1,7 +1,43 @@
 import '../css/student-card.css'
 import StudentList from "./StudentList";
 import PropTypes from "prop-types";
+import {useState} from "react";
+
+function ExpandButton(props) {
+    return(
+        <div onClick={props.click}>
+            <button>+</button>
+        </div>
+    )
+}
+function Grades(props) {
+    const grades=props.grades;
+    let count=0;
+    return(
+        <div className={"grades"}>
+            <ol>
+                {
+                    grades.map(grade=>{
+                        return(
+                            <li>
+                                <div>
+                                    <p>Test {++count}:</p>
+                                    <p> {grade} </p>
+                                </div>
+                            </li>
+                        )
+                    })
+                }
+            </ol>
+        </div>
+    )
+}
+
 const StudentCard = (props) => {
+    const [expanded,setExpanded]=useState(false);
+    const onClick=()=>{
+        setExpanded(!expanded)
+    }
   return(
       <div className={"card"}>
           <img className={"student-image"} src={props.photoUrl}/>
@@ -14,6 +50,8 @@ const StudentCard = (props) => {
                 <p>Average: {props.average}%</p>
               </div>
           </div>
+          <ExpandButton click={onClick} />
+          <Grades grades={props.grades} />
       </div>
   )
 }
