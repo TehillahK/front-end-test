@@ -1,4 +1,6 @@
 import '../css/student-card.css'
+import StudentList from "./StudentList";
+import PropTypes from "prop-types";
 const StudentCard = (props) => {
   return(
       <div className={"card"}>
@@ -16,10 +18,18 @@ const StudentCard = (props) => {
   )
 }
 StudentCard.defaultProps={
+    photoUrl:PropTypes.string ,
+    name: PropTypes.string,
+    company: PropTypes.string,
+    skill: PropTypes.string,
+    average: PropTypes.number
+}
+StudentCard.defaultProps={
     photoUrl:'',
     name:'Benson James',
     company:'some company',
     skill:'java',
-    average:'80.9'
+    average:80.9
 }
+
 export default StudentCard;
