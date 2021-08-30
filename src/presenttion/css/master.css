@@ -31,7 +31,7 @@ body{
     grid-template-columns: auto;
     border-radius: 15px;
     background-color: white;
-    height: 500px;
+    height: 550px;
     width: 700px;
     overflow: auto;
 }
