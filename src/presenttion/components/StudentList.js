@@ -6,21 +6,26 @@ const StudentList=(props)=>{
     const students=props.list
     const searchQuery=props.query
     return(
-        <div>
+        <div className={"students"}>
                {
                    students.filter(
                        (student)=>{
+                           let result;
                            if(searchQuery === ""){
-                                return student;
-                           }else if((student.firstName.toLowerCase()+" "+student.lastName).includes(searchQuery.toLowerCase())){
-                                return student;
+                                result = student;
+                           }else if((student.firstName.toLowerCase()).includes(searchQuery.toLowerCase())){
+                                result = student;
+                           }else if((student.lastName.toLowerCase()).includes(searchQuery.toLowerCase())){
+                               result = student;
                            }
+                           return result
                        }
                    ).map(student=>{
+                       let studentName=student.firstName+" "+student.lastName;
+                       let studentAv=getAverageGrade(student.grades);
                        return(
-                           <StudentCard key={student.email} photoUrl={student.pic} name={student.firstName+" "+student.lastName} email={student.email}
-                                        skill={student.skill} average={getAverageGrade(student.grades)}
-                           />
+                           <StudentCard key={student.email} photoUrl={student.pic} name={studentName} email={student.email}
+                                        skill={student.skill} average={studentAv} />
                        )
                    })
                }

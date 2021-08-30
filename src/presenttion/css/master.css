@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: Raleway;
     src:url('https://fonts.googleapis.com/css?family=Raleway');
@@ -29,10 +30,15 @@ body{
 .box{
     display: grid;
     grid-template-columns: auto;
+    grid-template-rows: 45px 505px;
     border-radius: 15px;
     background-color: white;
     height: 550px;
     width: 700px;
-    overflow: auto;
+    overflow-y: scroll;
 }
 
+.box .students{
+    display: flex;
+    flex-direction: column;
+}

@@ -3,9 +3,10 @@
     grid-template-columns: 180px auto;
     width: 100%;
     border-bottom: thin lightgray solid;
+    align-self: flex-start;
 }
 .card .student-image{
-    margin: auto;
+   margin: auto;
 
     border: thin solid lightgray;
     border-radius: 100%;
