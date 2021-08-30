@@ -23,9 +23,10 @@
   padding-left: 15px;
     padding-bottom: 20px;
     font-size: 15px;
+    font-weight: lighter;
     color: gray;
 
-    line-height: 5px;
+    line-height: 8px;
 }
 img{
     border: 2px solid gray;
