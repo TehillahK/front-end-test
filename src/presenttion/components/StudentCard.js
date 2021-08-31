@@ -1,5 +1,4 @@
 import '../css/student-card.css'
-import StudentList from "./StudentList";
 import PropTypes from "prop-types";
 import {useState} from "react";
 const GradesStyle = {
