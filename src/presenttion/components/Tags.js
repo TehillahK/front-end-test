@@ -1,5 +1,12 @@
 import {useEffect, useState} from "react";
 
+function TagList() {
+    return(
+        <div>
+            tag list
+        </div>
+    )
+}
 const Tags = () => {
     const [tags,setTags]=useState([])
     useEffect(() => {
@@ -17,6 +24,9 @@ const Tags = () => {
     }, []);
   return(
       <div>
+          {
+              tags ? <TagList /> :null
+          }
             <input id={"tag-input"} placeholder={"add tag"} />
       </div>
   )
