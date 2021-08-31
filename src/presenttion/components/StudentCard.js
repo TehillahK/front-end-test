@@ -11,7 +11,7 @@ function ExpandButton(props) {
         setClicked(!clicked)
     }
     return(
-        <div>
+        <div >
             <button className={"expand-button"} onClick={onPress} >
                 {
                  clicked ? "-"  :"+"

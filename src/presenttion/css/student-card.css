@@ -62,5 +62,10 @@ li{
     flex-direction: column;
 }
 .expand-button{
+    font-size: 40px;
+    font-weight: bolder;
+    color: rgb(170,170,170);
     border-style: none;
+    background-color: transparent;
+
 }
