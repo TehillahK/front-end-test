@@ -30,7 +30,7 @@ body{
 .box{
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 45px 505px;
+    grid-template-rows: 45px 45px 460px;
     border-radius: 15px;
     background-color: white;
     height: 550px;
