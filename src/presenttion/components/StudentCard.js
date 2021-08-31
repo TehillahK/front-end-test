@@ -1,4 +1,4 @@
-import '../css/student-card.css'
+
 import PropTypes from "prop-types";
 import {useState} from "react";
 import {getAverageGrade} from "../../business/students";

@@ -10,3 +10,7 @@ export function getAverageGrade(grades){
     return sum/grades.length
 }
 
+export function addStudentTag(){
+
+
+}

@@ -1,9 +1,8 @@
 
-
-
 import {useEffect, useState} from "react";
 import StudentList from "./components/StudentList";
 import './css/master.css'
+import './css/student-card.css'
 import SearchBar from "./components/SearchBar";
 function App() {
  // let studentLists=getStudents();
