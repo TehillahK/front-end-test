@@ -29,12 +29,12 @@ function Grades(props) {
                 {
                     grades.map(grade=>{
                         return(
-                            <p>
+                            <div>
 
-                                <p>Test {++count}: {grade}% </p>
+                                <p>Test {++count}:</p>
+                                <p>{grade}%</p>
 
-
-                            </p>
+                            </div>
                         )
                     })
                 }
