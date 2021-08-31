@@ -2,7 +2,13 @@ import '../css/student-card.css'
 import StudentList from "./StudentList";
 import PropTypes from "prop-types";
 import {useState} from "react";
-
+const GradesStyle = {
+    display: "flex",
+    flexDirection: "row",
+}
+const GradeStyle={
+    marginLeft:"25px"
+}
 function ExpandButton(props) {
     const [clicked,setClicked]=useState(false)
     const expand=props.click
@@ -29,10 +35,10 @@ function Grades(props) {
                 {
                     grades.map(grade=>{
                         return(
-                            <div>
+                            <div style={GradesStyle}>
 
                                 <p>Test {++count}:</p>
-                                <p>{grade}%</p>
+                                <p style={GradeStyle}>{grade}%</p>
 
                             </div>
                         )
