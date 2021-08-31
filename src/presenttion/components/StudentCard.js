@@ -6,31 +6,35 @@ import {useState} from "react";
 function ExpandButton(props) {
     return(
         <div onClick={props.click}>
-            <button>+</button>
+            <button className={"expand-button"}>
+                +
+            </button>
         </div>
     )
 }
 function Grades(props) {
     const grades=props.grades;
     let count=0;
-    return(
-        <div className={"grades"}>
-            <ol>
+
+        return(
+            <div className={"grades"}>
                 {
                     grades.map(grade=>{
                         return(
-                            <li>
-                                <div>
-                                    <p>Test {++count}:</p>
-                                    <p> {grade} </p>
-                                </div>
-                            </li>
+                            <p>
+
+                                <p>Test {++count}: {grade}% </p>
+
+
+                            </p>
                         )
                     })
                 }
-            </ol>
-        </div>
-    )
+
+            </div>
+        )
+
+
 }
 
 const StudentCard = (props) => {
@@ -50,8 +54,15 @@ const StudentCard = (props) => {
                 <p>Average: {props.average}%</p>
               </div>
           </div>
-          <ExpandButton click={onClick} />
-          <Grades grades={props.grades} />
+          <ExpandButton click={onClick} hasClicked={expanded} />
+          <span />
+          {
+              expanded ?   <Grades grades={props.grades}  />: null
+          }
+
+
+
+
       </div>
   )
 }

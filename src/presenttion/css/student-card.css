@@ -1,7 +1,8 @@
 .card{
+    margin-top: 15px;
     display: grid;
     grid-template-columns: 180px auto 50px;
-    grid-template-rows: auto auto ;
+    grid-template-rows: auto auto;
     width: 100%;
     border-bottom: thin lightgray solid;
     align-self: flex-start;
@@ -23,12 +24,25 @@
 
 .card .content .card-text{
   padding-left: 15px;
-    padding-bottom: 20px;
+    margin-bottom: 3px;
     font-size: 15px;
     font-weight: lighter;
     color: gray;
 
     line-height: 5px;
+}
+
+.card .grades{
+    margin-left: 15px;
+    margin-bottom: 5px;
+    font-weight: lighter;
+    color: gray;
+    font-size: 15px;
+    line-height: 1px;
+}
+.grade-entry{
+    display: flex;
+    flex-direction: row;
 }
 img{
     border: 2px solid gray;
@@ -37,4 +51,16 @@ img{
 
 ol{
     list-style: none;
+}
+
+li{
+    display: flex;
+    flex-direction: row;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+.expand-button{
+    border-style: none;
 }
