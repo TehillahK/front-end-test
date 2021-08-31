@@ -4,10 +4,18 @@ import PropTypes from "prop-types";
 import {useState} from "react";
 
 function ExpandButton(props) {
+    const [clicked,setClicked]=useState(false)
+    const expand=props.click
+    const onPress=()=>{
+        expand()
+        setClicked(!clicked)
+    }
     return(
-        <div onClick={props.click}>
-            <button className={"expand-button"}>
-                +
+        <div>
+            <button className={"expand-button"} onClick={onPress} >
+                {
+                 clicked ? "-"  :"+"
+                }
             </button>
         </div>
     )
