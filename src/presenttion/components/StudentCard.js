@@ -2,6 +2,7 @@
 import PropTypes from "prop-types";
 import {useState} from "react";
 import {getAverageGrade} from "../../business/students";
+import Tags from "./Tags";
 
 const StudentProfile=  {
 
@@ -58,6 +59,15 @@ function Grades(props) {
 
 }
 
+function CardFooter(props) {
+    return(
+        <div className={"card-footer"}>
+            <Grades grades={props.grades}  />
+            <Tags />
+        </div>
+    )
+}
+
 const StudentCard = (props) => {
     const [expanded,setExpanded]=useState(false);
     const onClick=()=>{
@@ -85,7 +95,7 @@ const StudentCard = (props) => {
           <ExpandButton click={onClick} hasClicked={expanded} />
           <span />
           {
-              expanded ?   <Grades grades={props.grades}  />: null
+              expanded ?   <CardFooter grades={props.grades}  />: null
           }
 
 
