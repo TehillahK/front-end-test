@@ -21,11 +21,8 @@ const StudentList=(props)=>{
                            return result
                        }
                    ).map(student=>{
-                       let studentName=student.firstName+" "+student.lastName;
-                       let studentAv=getAverageGrade(student.grades);
                        return(
-                           <StudentCard student={student} key={student.email} photoUrl={student.pic} name={studentName} email={student.email}
-                                        skill={student.skill} average={studentAv} grades={student.grades} />
+                           <StudentCard key={student.email} student={student}  />
                        )
                    })
                }

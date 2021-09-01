@@ -43,7 +43,7 @@ function Grades(props) {
                 {
                     grades.map(grade=>{
                         return(
-                            <div style={GradesStyle}>
+                            <div key={count} style={GradesStyle}>
 
                                 <p>Test {++count}:</p>
                                 <p style={GradeStyle}>{grade}%</p>
@@ -63,7 +63,7 @@ function CardFooter(props) {
     return(
         <div className={"card-footer"}>
             <Grades grades={props.grades}  />
-            <Tags />
+            <Tags student={props.student} />
         </div>
     )
 }
@@ -95,7 +95,7 @@ const StudentCard = (props) => {
           <ExpandButton click={onClick} hasClicked={expanded} />
           <span />
           {
-              expanded ?   <CardFooter grades={props.grades}  />: null
+              expanded ?   <CardFooter grades={student.grades} student={student} />: null
           }
 
 
