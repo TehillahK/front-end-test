@@ -28,9 +28,9 @@ const Tags = (props) => {
 
     function addNewTag() {
         let arr= []
-        console.log(inputTxt)
-        arr.push({id:`${inputTxt}` ,  value: `${inputTxt}`})
-        console.log(arr)
+        console.log(`${inputTxt} entered`)
+       // arr.push({id:`${inputTxt}` ,  value: `${inputTxt}`})
+       // console.log(arr)
       //  setTags(arr)
         setEnterPressed(true)
     }
@@ -42,7 +42,7 @@ const Tags = (props) => {
                 event.preventDefault();
                 // callMyFunction();
 
-                console.log(inputTxt)
+                //console.log(inputTxt)
 
                 addNewTag()
             }
@@ -51,7 +51,7 @@ const Tags = (props) => {
         return () => {
             document.removeEventListener("keydown", listener);
         };
-    }, []);
+    }, [inputTxt]);
   return(
       <div>
           {
