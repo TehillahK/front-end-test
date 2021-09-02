@@ -28,10 +28,11 @@ const Tags = (props) => {
 
     function addNewTag() {
         let arr= []
-        console.log(`${inputTxt} entered`)
-       // arr.push({id:`${inputTxt}` ,  value: `${inputTxt}`})
-       // console.log(arr)
-      //  setTags(arr)
+       // console.log(`${inputTxt} entered`)
+        arr.push( ...tags,`${inputTxt}`)
+        console.log(arr)
+        setTags(arr)
+      //  setTags()
         setEnterPressed(true)
     }
 
