@@ -8,11 +8,11 @@ function TagList(props) {
             setTags(props.list)
     })
     return(
-        <ul>
+        <ul className={"tags"}>
             {
                 tags.map(tag=>{
                     return(
-                        <li >
+                        <li className={"tag"}>
                             {
                                 tag
                             }

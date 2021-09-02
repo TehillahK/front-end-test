@@ -77,3 +77,20 @@ li{
     border-top-style: none;
     outline: none;
 }
+.tags{
+    position: relative;
+    top:-10px;
+    left: -35px;
+    display: inline-flex;
+    justify-content: flex-start;
+
+}
+
+.tag{
+    padding: 5px 15px;
+   border-radius: 4px;
+    background-color: rgb(224,224,224);
+    margin-right: 5px;
+}
+
+
