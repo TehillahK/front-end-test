@@ -8,10 +8,13 @@ function TagList(props) {
             setTags(props.list)
     })
     return(
+
+<div>
+
         <ul className={"tags"}>
-            {
-                tags.map(tag=>{
-                    return(
+            { tags.length!==0 &&
+                tags.map(tag => {
+                    return (
                         <li className={"tag"}>
                             {
                                 tag
@@ -21,6 +24,11 @@ function TagList(props) {
                 })
             }
         </ul>
+
+
+</div>
+
+
     )
 }
 const Tags = (props) => {
@@ -28,16 +36,18 @@ const Tags = (props) => {
     const [tags,setTags]=useState([]);
     const [enterPressed,setEnterPressed]=useState(false)
     const student=props.student;
-
+    let eventLister;
     function addNewTag() {
-        let arr= []
-       // console.log(`${inputTxt} entered`)
-        arr.push( ...tags,`${inputTxt}`)
-        student["tags"]=arr;
-        console.log(student)
-        setTags(arr)
-      //  setTags()
+        if(inputTxt!=="") {
+            let arr = []
+            // console.log(`${inputTxt} entered`)
 
+            arr.push(...tags, `${inputTxt}`)
+            student["tags"] = arr;
+            console.log(student)
+            setTags(arr)
+            //  setTags()
+        }
     }
 
     useEffect(() => {
@@ -54,17 +64,18 @@ const Tags = (props) => {
             }
         };
         document.addEventListener("keydown", listener);
-        return () => {
-            document.removeEventListener("keydown", listener);
-        };
+      //  return () => {
+     //       document.removeEventListener("keydown", listener);
+     //   };
+       // eventLister=listener;
     }, [inputTxt]);
   return(
       <div>
           {
-              enterPressed ? <TagList entry={inputTxt} list={tags} key={student.email} /> :null
+              tags.length>0 ? <TagList entry={inputTxt} list={tags} key={student.email} /> :null
           }
           <form>
-            <input id={"tag-input"} placeholder={"add tag"} onChange={ event => setInputTxt(event.target.value)} />
+            <input id={"tag-input"} placeholder={"add tag"} onChange={ event => setInputTxt(event.target.value)}  />
           </form>
       </div>
   )

@@ -43,8 +43,8 @@ function App() {
     <div className={"container"}>
         <div className={"box"}>
             <SearchBar update={updateNameQuery} searchCriteria={"name"}/>
-            <SearchBar searchCriteria={"tag"} />
-            <StudentList list={students} query={name} />
+            <SearchBar update={updateTagQuery} searchCriteria={"tag"} />
+            <StudentList list={students} queryName={name} queryTag={tag} />
         </div>
     </div>
   );
