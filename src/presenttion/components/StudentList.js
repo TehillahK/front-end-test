@@ -23,6 +23,7 @@ const StudentList=(props)=>{
                                 result=student;
                            }
                            return result
+
                        }
                    ).map(student=>{
                        return(

@@ -8,11 +8,8 @@ function TagList(props) {
             setTags(props.list)
     })
     return(
-
-<div>
-
         <ul className={"tags"}>
-            { tags.length!==0 &&
+            {
                 tags.map(tag => {
                     return (
                         <li className={"tag"}>
@@ -24,11 +21,6 @@ function TagList(props) {
                 })
             }
         </ul>
-
-
-</div>
-
-
     )
 }
 const Tags = (props) => {
@@ -64,7 +56,7 @@ const Tags = (props) => {
           }
           <form>
             <input id={"tag-input"} placeholder={"add tag"} onChange={ event => setInputTxt(event.target.value)}
-                onKeyDown={EnterPressEvent}
+
             />
           </form>
       </div>
