@@ -86,11 +86,10 @@ const StudentCard = (props) => {
           <div className={"content"} alt={`Student image of ${studentName}`}>
               <h1>{studentName}</h1>
               <div className={"card-text"}>
-                  <p>Email: {studentEmail}</p>
-                  <p>Company: {studentCompany}</p>
-                  <p>Skill: {studentSkill}</p>
-                  <p>Average: {studentAv}%</p>
-
+                <p>Email: {studentEmail}</p>
+                <p>Company: {studentCompany}</p>
+                <p>Skill: {studentSkill}</p>
+                <p>Average: {studentAv}%</p>
                   {
                       expanded ?   <CardFooter grades={student.grades} student={student} />: null
                   }

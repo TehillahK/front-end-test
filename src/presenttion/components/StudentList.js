@@ -4,23 +4,19 @@ import {getAverageGrade} from "../../business/students";
 
 const StudentList=(props)=>{
     const students=props.list
-    const searchNameQuery=props.queryName
-    const searchTagQuery=props.queryTag;
+    const searchQuery=props.query
     return(
         <div className={"students"}>
                {
                    students.filter(
                        (student)=>{
                            let result;
-                           if(searchNameQuery  === "" && searchTagQuery===""){
+                           if(searchQuery === ""){
                                 result = student;
-                           }else if((student.firstName.toLowerCase()).includes(searchNameQuery.toLowerCase())){
+                           }else if((student.firstName.toLowerCase()).includes(searchQuery.toLowerCase())){
                                 result = student;
-                           }else if((student.lastName.toLowerCase()).includes(searchNameQuery.toLowerCase())){
+                           }else if((student.lastName.toLowerCase()).includes(searchQuery.toLowerCase())){
                                result = student;
-                           }
-                            else if(student["tags"]!== undefined && student.tags.includes()){
-                                result=student;
                            }
                            return result
 
