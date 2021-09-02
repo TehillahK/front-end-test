@@ -9,7 +9,7 @@ function TagList(props) {
     })
     return(
         <ul className={"tags"}>
-            {
+            {tags.length!==0 &&
                 tags.map(tag=>{
                     return(
                         <li className={"tag"}>
@@ -26,8 +26,8 @@ function TagList(props) {
 const Tags = (props) => {
     const [inputTxt,setInputTxt]=useState("")
     const [tags,setTags]=useState([]);
-    const [enterPressed,setEnterPressed]=useState(false)
     const student=props.student;
+
 
     function addNewTag() {
         let arr= []
@@ -40,31 +40,17 @@ const Tags = (props) => {
 
     }
 
-    useEffect(() => {
-        const listener = event => {
-            if (event.code === "Enter" || event.code === "NumpadEnter") {
-                console.log("Enter key was pressed. Run your function.");
-                event.preventDefault();
-                // callMyFunction();
-
-                //console.log(inputTxt)
-
-                addNewTag()
-                setEnterPressed(true)
-            }
-        };
-        document.addEventListener("keydown", listener);
-        return () => {
-            document.removeEventListener("keydown", listener);
-        };
-    }, [inputTxt]);
+    const EnterPressEvent= (event) => {
+        if (event.key === 'Enter') {
+            addNewTag();
+        }
+    }
   return(
       <div>
-          {
-              enterPressed ? <TagList entry={inputTxt} list={tags} key={student.email} /> :null
-          }
+          <TagList entry={inputTxt} list={tags} key={student.email} />
           <form>
-            <input id={"tag-input"} placeholder={"add tag"} onChange={ event => setInputTxt(event.target.value)} />
+            <input id={"tag-input"} placeholder={"add tag"} onChange={ event => setInputTxt(event.target.value)}
+                   onKeyDown={EnterPressEvent}   />
           </form>
       </div>
   )
