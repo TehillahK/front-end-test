@@ -2,8 +2,11 @@ import {useEffect, useState} from "react";
 import {addTag} from "../../business/AccessTags";
 
 function TagList(props) {
-   const [tags,setTags]=useState(["tag1"]);
+   const [tags,setTags]=useState([]);
 
+    useEffect(()=>{
+            setTags(props.list)
+    })
     return(
         <ul>
             {
@@ -11,7 +14,7 @@ function TagList(props) {
                     return(
                         <li >
                             {
-                                tag.value
+                                tag
                             }
                         </li>
                     )
@@ -33,7 +36,7 @@ const Tags = (props) => {
         console.log(arr)
         setTags(arr)
       //  setTags()
-        setEnterPressed(true)
+
     }
 
     useEffect(() => {
@@ -46,6 +49,7 @@ const Tags = (props) => {
                 //console.log(inputTxt)
 
                 addNewTag()
+                setEnterPressed(true)
             }
         };
         document.addEventListener("keydown", listener);
