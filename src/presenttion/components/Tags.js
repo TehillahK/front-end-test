@@ -33,7 +33,8 @@ const Tags = (props) => {
         let arr= []
        // console.log(`${inputTxt} entered`)
         arr.push( ...tags,`${inputTxt}`)
-        console.log(arr)
+        student["tags"]=arr;
+        console.log(student)
         setTags(arr)
       //  setTags()
 
