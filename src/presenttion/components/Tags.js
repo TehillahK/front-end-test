@@ -2,11 +2,8 @@ import {useEffect, useState} from "react";
 import {addTag} from "../../business/AccessTags";
 
 function TagList(props) {
-   const [tags,setTags]=useState([]);
 
-    useEffect(()=>{
-            setTags(props.list)
-    })
+    const tags=props.list;
     return(
         <ul className={"tags"}>
             {
@@ -30,41 +27,35 @@ const Tags = (props) => {
     const student=props.student;
 
     function addNewTag() {
-        let arr= []
-       // console.log(`${inputTxt} entered`)
-        arr.push( ...tags,`${inputTxt}`)
-        student["tags"]=arr;
-        console.log(student)
-        setTags(arr)
-      //  setTags()
+        if(inputTxt!=="" ) {
+            let arr = []
+            // console.log(`${inputTxt} entered`)
+
+            arr.push(...tags, `${inputTxt}`)
+            student["tags"] = arr;
+            console.log(student)
+            setTags(arr)
+            //  setTags()
+        }
 
     }
 
-    useEffect(() => {
-        const listener = event => {
-            if (event.code === "Enter" || event.code === "NumpadEnter") {
-                console.log("Enter key was pressed. Run your function.");
-                event.preventDefault();
-                // callMyFunction();
 
-                //console.log(inputTxt)
-
-                addNewTag()
-                setEnterPressed(true)
-            }
-        };
-        document.addEventListener("keydown", listener);
-        return () => {
-            document.removeEventListener("keydown", listener);
-        };
-    }, [inputTxt]);
   return(
       <div>
           {
-              enterPressed ? <TagList entry={inputTxt} list={tags} key={student.email} /> :null
+              tags.length>0 ? <TagList entry={inputTxt} list={tags} key={student.email} /> :null
           }
           <form>
-            <input id={"tag-input"} placeholder={"add tag"} onChange={ event => setInputTxt(event.target.value)} />
+            <input id={"tag-input"} placeholder={"add tag"} onChange={ event => setInputTxt(event.target.value)}
+                    onKeyDown={event => {
+                        if (event.key === 'Enter') {
+                            addNewTag();
+                            console.log("enter")
+                            event.preventDefault();
+                        }
+                    }}
+            />
           </form>
       </div>
   )
