@@ -63,7 +63,7 @@ function CardFooter(props) {
     return(
         <div className={"card-footer"}>
             <Grades grades={props.grades}  />
-            <Tags student={props.student} />
+
         </div>
     )
 }
@@ -90,13 +90,14 @@ const StudentCard = (props) => {
                 <p>Company: {studentCompany}</p>
                 <p>Skill: {studentSkill}</p>
                 <p>Average: {studentAv}%</p>
+                  {
+                      expanded ?   <CardFooter grades={student.grades} student={student} />: null
+                  }
               </div>
+              <Tags student={props.student} />
           </div>
           <ExpandButton click={onClick} hasClicked={expanded} />
           <span />
-          {
-              expanded ?   <CardFooter grades={student.grades} student={student} />: null
-          }
 
 
 

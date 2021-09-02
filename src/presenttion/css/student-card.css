@@ -71,6 +71,7 @@ li{
 
 }
 #tag-input{
+    margin-left: 15px;
     font-size: 15px;
     border-left-style: none;
     border-right-style: none;
@@ -80,7 +81,8 @@ li{
 .tags{
     position: relative;
     top:-10px;
-    left: -35px;
+    left: -40px;
+    margin-left: 20px;
     display: inline-flex;
     justify-content: flex-start;
 

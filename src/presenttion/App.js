@@ -8,7 +8,7 @@ function App() {
  // let studentLists=getStudents();
   const [students, setStudents] = useState([]);
   const [name,setName]=useState('')
-
+  const [tag,setTag]=useState('')
     useEffect(() => {
        async function getStudents(){
          try{
@@ -32,15 +32,17 @@ function App() {
        getStudents().then(r => console.log("success"))
     }, []);
 
-  function updateQuery(query){
+  function updateNameQuery(query){
       setName(query)
   }
-
+  function updateTagQuery(query){
+      setTag(query)
+  }
 
   return (
     <div className={"container"}>
         <div className={"box"}>
-            <SearchBar update={updateQuery} searchCriteria={"name"}/>
+            <SearchBar update={updateNameQuery} searchCriteria={"name"}/>
             <SearchBar searchCriteria={"tag"} />
             <StudentList list={students} query={name} />
         </div>
