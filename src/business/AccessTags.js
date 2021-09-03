@@ -9,3 +9,11 @@ export function addTag(tag,tags){
     ]
     return newTags;
 }
+
+export  function  createTagField(students){
+    return students.forEach(
+        function (student) {
+            student["tags"] = [];
+        }
+    );
+}

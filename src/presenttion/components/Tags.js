@@ -1,5 +1,5 @@
-import {useEffect, useState} from "react";
-import {addTag} from "../../business/AccessTags";
+import {useState} from "react";
+
 
 function TagList(props) {
 
@@ -9,7 +9,7 @@ function TagList(props) {
             {
                 tags.map(tag=>{
                     return(
-                        <li className={"tag"}>
+                        <li key={tag} className={"tag"}>
                             {
                                 tag
                             }
@@ -23,7 +23,6 @@ function TagList(props) {
 const Tags = (props) => {
     const [inputTxt,setInputTxt]=useState("")
     const [tags,setTags]=useState([]);
-    const [enterPressed,setEnterPressed]=useState(false)
     const student=props.student;
 
     function addNewTag() {
@@ -33,7 +32,7 @@ const Tags = (props) => {
 
             arr.push(...tags, `${inputTxt}`)
             student["tags"] = arr;
-            console.log(student)
+            //console.log(student)
             setTags(arr)
             //  setTags()
         }

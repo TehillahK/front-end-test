@@ -4,6 +4,7 @@ import StudentList from "./components/StudentList";
 import './css/master.css'
 import './css/student-card.css'
 import SearchBar from "./components/SearchBar";
+import {createTagField} from "../business/AccessTags";
 function App() {
  // let studentLists=getStudents();
   const [students, setStudents] = useState([]);
@@ -21,6 +22,7 @@ function App() {
              p.then(function (v){
                  const studentArr=Object.values(v)[0];
              //    console.log(studentArr.entries)
+             //    createTagField(studentArr)
                  setStudents(studentArr)
              })
           //   setStudents(json)
@@ -38,13 +40,13 @@ function App() {
   function updateTagQuery(query){
       setTag(query)
   }
-
+   // console.log(students)
   return (
     <div className={"container"}>
         <div className={"box"}>
             <SearchBar update={updateNameQuery} searchCriteria={"name"}/>
-            <SearchBar searchCriteria={"tag"} />
-            <StudentList list={students} query={name} />
+            <SearchBar update={updateTagQuery} searchCriteria={"tag"} />
+            <StudentList list={students} nameQuery={name} tagQuery={tag} />
         </div>
     </div>
   );

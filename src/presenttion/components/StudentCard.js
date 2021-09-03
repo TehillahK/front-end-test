@@ -1,7 +1,8 @@
 
 import PropTypes from "prop-types";
 import {useState} from "react";
-import {getAverageGrade} from "../../business/students";
+
+import {getAverageGrade} from "../../business/AccessStudents";
 import Tags from "./Tags";
 
 const StudentProfile=  {
@@ -82,7 +83,10 @@ const StudentCard = (props) => {
     const studentAv=getAverageGrade(student.grades);
   return(
       <div className={"card"}>
-          <img  style={StudentProfile} className={"student-image"} src={studentPic}/>
+
+            <img  style={StudentProfile} className={"student-image"} src={studentPic}
+                  alt={`${studentName}'s photo`}/>
+
           <div className={"content"} alt={`Student image of ${studentName}`}>
               <h1>{studentName}</h1>
               <div className={"card-text"}>
