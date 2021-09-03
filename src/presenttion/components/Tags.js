@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 
 function TagList(props) {
-
     const tags=props.list;
     return(
         <ul className={"tags"}>
@@ -19,6 +18,7 @@ function TagList(props) {
         </ul>
     )
 }
+
 const Tags = (props) => {
     const [inputTxt,setInputTxt]=useState("")
     const [tags,setTags]=useState([]);
@@ -26,16 +26,11 @@ const Tags = (props) => {
     const tagTxt = React.useRef()
     function addNewTag() {
         if(inputTxt!=="" ) {
-            let arr = []
-            // console.log(`${inputTxt} entered`)
-
-            arr.push(...tags, `${inputTxt}`)
+            let arr = [];
+            arr.push(...tags, `${inputTxt}`);
             student["tags"] = arr;
-            //console.log(student)
-            setTags(arr)
-            //  setTags()
+            setTags(arr);
         }
-
     }
     return(
       <div>
@@ -43,7 +38,7 @@ const Tags = (props) => {
               tags.length>0 ? <TagList entry={inputTxt} list={tags} key={student.email} /> :null
           }
           <form>
-            <input id={"tag-input"} placeholder={"add tag"} ref={tagTxt}
+            <input id={"tag-input"} placeholder={"Add tag"} ref={tagTxt}
                    onChange={ event => setInputTxt(event.target.value)}
                     onKeyDown={event => {
                         if (event.key === 'Enter') {
@@ -52,11 +47,9 @@ const Tags = (props) => {
                             tagTxt.current.value="";
                         }
                     }}
-
             />
           </form>
       </div>
   )
 }
-
 export default Tags;

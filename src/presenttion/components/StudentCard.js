@@ -59,7 +59,6 @@ function CardFooter(props) {
     return(
         <div className={"card-footer"}>
             <Grades grades={props.grades}  />
-
         </div>
     )
 }
@@ -78,9 +77,7 @@ const StudentCard = (props) => {
     const studentAv=getAverageGrade(student.grades);
   return(
       <div className={"card"}>
-
-            <img  style={StudentProfile} className={"student-image"} src={studentPic}
-                  alt={`${studentName}'s photo`}/>
+            <img className={"student-image"} src={studentPic} alt={`${studentName}'s photo`}/>
 
           <div className={"content"} alt={`Student image of ${studentName}`}>
               <h1>{studentName}</h1>

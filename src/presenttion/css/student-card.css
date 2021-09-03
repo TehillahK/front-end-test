@@ -9,11 +9,15 @@
 }
 .card .student-image{
     display: flex;
-    margin: auto;
+    margin-top: 18px;
+    margin-left: auto;
+    margin-right: auto;
     border: thin solid lightgray;
+    border-radius: 100%;
+    height: 120px;
 }
 .card .content{
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 .card .content h1{
     text-transform: uppercase;
@@ -76,7 +80,8 @@ li{
 }
 #tag-input{
     margin-left: 15px;
-    font-size: 15px;
+    font-size: 13px;
+    font-weight: lighter;
     border-left-style: none;
     border-right-style: none;
     border-top-style: none;
