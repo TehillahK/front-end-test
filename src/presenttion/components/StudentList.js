@@ -3,12 +3,9 @@ import StudentCard from "./StudentCard";
 import {findStudent} from "../../business/AccessStudents";
 
 const StudentList=(props)=>{
-    const students=props.list
-    const searchQuery=props.nameQuery
+    const students=props.list;
+    const searchQuery=props.nameQuery;
     const tagQuery=props.tagQuery;
-
-
-
     return(
         <div className={"students"}>
             {

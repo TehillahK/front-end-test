@@ -1,12 +1,10 @@
 
 import PropTypes from "prop-types";
 import {useState} from "react";
-
 import {getAverageGrade} from "../../business/AccessStudents";
 import Tags from "./Tags";
 
 const StudentProfile=  {
-
     borderRadius: "100%",
     height: "120px"
 }
@@ -53,11 +51,8 @@ function Grades(props) {
                         )
                     })
                 }
-
             </div>
         )
-
-
 }
 
 function CardFooter(props) {
