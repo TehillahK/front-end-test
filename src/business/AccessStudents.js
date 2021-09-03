@@ -24,14 +24,14 @@ export function findStudent(students,name,tag){
             const studentName=student.firstName.toLowerCase().concat(` ${student.lastName.toLowerCase()}`);
             if(name === "" && tag === "")
             {
-                result=student;
+                result = student;
             }
             else if(name !== "" && tag === "" && studentName.includes(name.toLowerCase()))
             {
-                result =  student;
+                return  student;
             }
             else if(tag!=="" && student.tags!==undefined){
-                result = filterByTag(students,tag);
+                return  filterByTag(students,tag);
             }
             return result;
         }
