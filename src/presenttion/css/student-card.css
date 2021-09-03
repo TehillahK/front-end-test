@@ -1,5 +1,5 @@
 .card{
-    margin-top: 15px;
+    margin-top: 5px;
     display: grid;
     grid-template-columns: 180px auto 50px;
     grid-template-rows: auto auto;
@@ -12,6 +12,9 @@
     margin: auto;
     border: thin solid lightgray;
 }
+.card .content{
+    margin-bottom: 25px;
+}
 .card .content h1{
     text-transform: uppercase;
     font-weight:bolder;
@@ -19,13 +22,14 @@
 }
 
 .card .content .card-text{
-  padding-left: 15px;
-    margin-bottom: 3px;
+    margin-top: 30px;
+    padding-left: 15px;
+
     font-size: 15px;
     font-weight: lighter;
-    color: gray;
+    color: black;
 
-    line-height: 5px;
+    line-height: 10px;
 }
 .card-footer{
     display: flex;
@@ -36,7 +40,7 @@
 .card .grades{
 
     font-weight: lighter;
-    color: gray;
+    color: black;
     font-size: 15px;
     line-height: 1px;
 }
@@ -94,5 +98,6 @@ li{
     background-color: rgb(224,224,224);
     margin-right: 5px;
 }
+
 
 
