@@ -80,6 +80,7 @@ li{
     border-left-style: none;
     border-right-style: none;
     border-top-style: none;
+    border-color: black;
     outline: none;
 }
 .tags{
