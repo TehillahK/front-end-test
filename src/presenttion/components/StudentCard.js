@@ -4,11 +4,6 @@ import {useState} from "react";
 import {getAverageGrade} from "../../business/AccessStudents";
 import Tags from "./Tags";
 
-const StudentProfile=  {
-    borderRadius: "100%",
-    height: "120px"
-}
-
 const GradesStyle = {
     display: "flex",
     flexDirection: "row",
@@ -24,7 +19,7 @@ function ExpandButton(props) {
         setClicked(!clicked)
     }
     return(
-        <div >
+        <div>
             <button className={"expand-button"} onClick={onPress} >
                 {
                  clicked ? "-"  :"+"
@@ -36,7 +31,6 @@ function ExpandButton(props) {
 function Grades(props) {
     const grades=props.grades;
     let count=0;
-
         return(
             <div className={"grades"}>
                 {
@@ -77,8 +71,7 @@ const StudentCard = (props) => {
     const studentAv=getAverageGrade(student.grades);
   return(
       <div className={"card"}>
-            <img className={"student-image"} src={studentPic} alt={`${studentName}'s photo`}/>
-
+          <img className={"student-image"} src={studentPic} alt={`${studentName}'s photo`}/>
           <div className={"content"} alt={`Student image of ${studentName}`}>
               <h1>{studentName}</h1>
               <div className={"card-text"}>
@@ -94,10 +87,6 @@ const StudentCard = (props) => {
           </div>
           <ExpandButton click={onClick} hasClicked={expanded} />
           <span />
-
-
-
-
       </div>
   )
 }
