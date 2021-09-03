@@ -21,9 +21,15 @@ export function findStudent(students,name,tag){
             }
             else if(tag!==""){
                 console.log("here")
-                if((student.tags!==undefined) && (student.tags.includes(tag))){
-                    console.log(student)
-                  result = student;
+                if((student.tags!==undefined)){
+
+                    result= students.filter(
+                        (studentTag)=>{
+                            if (studentTag.tag!==undefined&& studentTag.tag.includes(tag)){
+                                return studentTag;
+                            }
+                        }
+                    )
                 }
             }
             else if(name!=="" && tag==="")
@@ -35,9 +41,6 @@ export function findStudent(students,name,tag){
                     result=  student;
                 }
             }
-
-
-
 
 
             return result;

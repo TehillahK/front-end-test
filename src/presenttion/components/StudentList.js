@@ -7,13 +7,7 @@ const StudentList=(props)=>{
     const searchQuery=props.nameQuery
     const tagQuery=props.tagQuery;
 
-    function search(students) {
-     return  students.filter(
-         (student)=>
-             student.firstName.toLowerCase().includes(searchQuery)||
-             student.lastName.toLowerCase().includes(searchQuery)
-        )
-    }
+
 
     return(
         <div className={"students"}>

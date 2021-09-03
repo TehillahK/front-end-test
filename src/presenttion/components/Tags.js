@@ -1,5 +1,4 @@
-import {useState} from "react";
-
+import React, {useState} from "react";
 
 function TagList(props) {
 
@@ -24,7 +23,7 @@ const Tags = (props) => {
     const [inputTxt,setInputTxt]=useState("")
     const [tags,setTags]=useState([]);
     const student=props.student;
-
+    const tagTxt = React.useRef()
     function addNewTag() {
         if(inputTxt!=="" ) {
             let arr = []
@@ -38,22 +37,22 @@ const Tags = (props) => {
         }
 
     }
-
-
-  return(
+    return(
       <div>
           {
               tags.length>0 ? <TagList entry={inputTxt} list={tags} key={student.email} /> :null
           }
           <form>
-            <input id={"tag-input"} placeholder={"add tag"} onChange={ event => setInputTxt(event.target.value)}
+            <input id={"tag-input"} placeholder={"add tag"} ref={tagTxt}
+                   onChange={ event => setInputTxt(event.target.value)}
                     onKeyDown={event => {
                         if (event.key === 'Enter') {
                             addNewTag();
-                            console.log("enter")
                             event.preventDefault();
+                            tagTxt.current.value="";
                         }
                     }}
+
             />
           </form>
       </div>
